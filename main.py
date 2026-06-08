@@ -2,7 +2,14 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from statsmodels.tsa.arima.model import ARIMA
 from sklearn.metrics import mean_absolute_error
+import os
+from dotenv import load_dotenv
+
     
+
+
+print("KEY LOADED:", os.getenv("GROQ_API_KEY"))
+
 
 # ===============================
 # STEP 1: LOAD DATA
@@ -102,11 +109,18 @@ import json
 
 
 # Initialize Gemini
+
+load_dotenv()
+
 llm = ChatGroq(
     model="llama-3.3-70b-versatile",
     temperature=0,
-    api_key="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"
+    api_key=os.getenv("GROQ_API_KEY")
 )
+
+
+
+
 @tool
 def get_largest_months(n: int = 3) -> str:
     """Return the N months with the highest revenue."""
@@ -164,7 +178,7 @@ llm_with_tools = llm.bind_tools(tools)
 SYSTEM = ("You are a revenue analyst. Use your tools to answer questions about "
           "the store's monthly revenue data. Always call a tool before answering.")
 
-print("\n🤖 AI Agent Ready!")
+print("\n AI Agent Ready!")
 print("Ask: 'biggest revenue month', 'outliers', 'worst months', 'stats summary'")
 print("Type 'exit' to quit\n")
 
