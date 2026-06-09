@@ -1,4 +1,4 @@
-**AI Revenue Forecasting Assistant
+****AI Revenue Forecasting Assistant**
 **Project Overview
 
 This project was developed in Python to analyze historical retail sales data and forecast future revenue using 
@@ -9,7 +9,7 @@ used to predict the next three months of revenue through an ARIMA forecasting mo
 The project also incorporates an AI-powered analytics assistant that enables users to ask business questions 
 in natural language and receive data-driven insights from the underlying revenue data.
 
-**Business Objective
+**Business Objective**
 
 Retail businesses rely on accurate revenue forecasts to support budgeting, inventory planning, 
 and operational decision-making. This project demonstrates how historical sales data can be transformed into 
@@ -42,7 +42,38 @@ Are there any unusual revenue patterns or outliers?
 What does the forecast suggest for next quarter?
 What is the overall revenue performance summary?
 
-**Results**
+**What Each File Are For? **
+main.py – Core Python script that runs the project. Handles data processing, analysis, and model execution (ARIMA forecasting logic).
+Data/ – Contains the raw and/or processed dataset used for analysis and forecasting (e.g., sales/time-series data).
+README.md – Project documentation outlining the purpose, setup instructions, and how to run the project.
+.gitignore – Specifies files and folders to exclude from version control (e.g., environment files, cache, system files).
 
-The model generates a three-month revenue forecast along with confidence intervals, 
-providing valuable insights to support business planning, budgeting, and operational decision-making.
+**How to run the project? **
+##  Getting Started
+
+### 1. Clone the repository in Visual Studio Code or an equivalent environment 
+```bash
+git clone https://github.com/yourusername/revenue-forecasting-agent.git
+cd revenue-forecasting-agent
+```
+
+### 2. Create a virtual environment and install dependencies
+```bash
+python -m venv venv
+venv\Scripts\activate
+pip install pandas matplotlib statsmodels scikit-learn langchain langchain-groq python-dotenv
+```
+
+### 3. Add your Groq API key
+Create a `.env` file in the project root:
+GROQ_API_KEY=your_key_here
+Get a free API key at 👉 https://console.groq.com/keys
+
+### 4. Run the project
+```bash
+python main.py
+```
+
+### 5. Interact with the AI Agent
+Once running, the agent will prompt you for questions:
+
